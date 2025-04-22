@@ -4,8 +4,6 @@ title: Резюме - Иван Иванов
 lang: ru
 ---
 
-![Фото Ивана Иванова](../assets/images/photo.jpg){: .profile-photo}
-
 # Иван Иванов
 Веб-разработчик | Full-Stack Developer
 
