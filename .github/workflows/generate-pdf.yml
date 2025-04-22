@@ -17,10 +17,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex
 
-      - name: Install Eisvogel Template
+      - name: Download Eisvogel Template
         run: |
           mkdir -p ~/.pandoc/templates
-          cp eisvogel.latex ~/.pandoc/templates/eisvogel.latex
+          wget -O ~/.pandoc/templates/eisvogel.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/master/eisvogel.latex
 
       - name: Convert Markdown to PDF (Русский)
         run: |
