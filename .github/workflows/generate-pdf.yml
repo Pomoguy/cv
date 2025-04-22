@@ -20,7 +20,10 @@ jobs:
       - name: Download Eisvogel Template
         run: |
           mkdir -p ~/.pandoc/templates
-          wget -O ~/.pandoc/templates/eisvogel.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/master/eisvogel.latex
+          wget -O ~/.pandoc/templates/eisvogel.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/eisvogel.latex
+          wget -O ~/.pandoc/templates/passoptions.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/passoptions.latex
+          wget -O ~/.pandoc/templates/fonts.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/fonts.latex
+          wget -O ~/.pandoc/templates/font-settings.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/font-settings.latex
 
       - name: Convert Markdown to PDF (Русский)
         run: |
