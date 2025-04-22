@@ -262,7 +262,7 @@ hr {
 
 @media (max-width: 480px) {
     html {
-        font-size: 14px;
+        font-size: 13px;
     }
     .wrapper, main > div {
         padding: 1rem;
