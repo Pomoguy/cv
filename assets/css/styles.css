@@ -77,13 +77,13 @@ p, ul {
     transform: scale(1.05);
 }
 
-/* Анимация для смены языков */
+/* Анимация для переключения контента */
 .fade-in {
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s forwards;
 }
 
 .fade-out {
-    animation: fadeOut 0.5s;
+    animation: fadeOut 0.5s forwards;
 }
 
 @keyframes fadeIn {

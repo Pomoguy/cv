@@ -2,11 +2,10 @@
 layout: default
 title: Резюме Иванова Ивана
 ---
-
 <div id="ru" class="fade-in">
 # Иванов Иван Иванович
 
-![Фотография](assets/images/photo.jpg){: .profile-photo }
+![Фотография](../assets/images/photo.jpg){: .profile-photo }
 
 **Веб-разработчик** с более чем 5-летним опытом создания современных веб-приложений.
 
@@ -41,55 +40,5 @@ title: Резюме Иванова Ивана
 
 ---
 
-[Скачать резюме (PDF)](resume_ru.pdf){: .download-btn }
+[Скачать резюме (PDF)](../resume_ru.pdf){: .download-btn }
 </div>
-
-<div id="en" class="fade-out" style="display:none;">
-# Ivanov Ivan Ivanovich
-
-![Photo](assets/images/photo.jpg){: .profile-photo }
-
-**Web Developer** with over 5 years of experience in creating modern web applications.
-
----
-
-## Contact Information
-
-- **Email:** [ivanov@example.com](mailto:ivanov@example.com)
-- **Phone:** +7 (123) 456-78-90
-- **GitHub:** [github.com/ivanov](https://github.com/ivanov)
-- **LinkedIn:** [linkedin.com/in/ivanov](https://linkedin.com/in/ivanov)
-
-## Work Experience
-
-### Lead Developer
-**XYZ Company**, January 2020 - Present
-
-- Development and maintenance of web applications using React and Node.js.
-- Leading a team of 5 developers.
-- Optimizing application performance and improving UX/UI.
-
-### Developer
-**ABC Company**, June 2017 - December 2019
-
-- Creating and implementing new features in existing applications.
-- Testing and debugging code to ensure high product quality.
-- Collaborating with designers and project managers to achieve goals.
-
-## Education
-
-**Master of Computer Science**, Moscow State University, 2015 - 2020
-
----
-
-[Download Resume (PDF)](resume_en.pdf){: .download-btn }
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
- <div class="container-fluid">
-   <ul class="navbar-nav">
-     <li class="nav-item"><a class="nav-link" href="#" onclick="setLanguage('ru')">Русский</a></li>
-     <li class="nav-item"><a class="nav-link" href="#" onclick="setLanguage('en')">English</a></li>
-   </ul>
- </div>
-</nav>
