@@ -1,195 +1,286 @@
-*, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+/* styles.css */
+
+/* --- Глобальные переменные (CSS Custom Properties) --- */
+:root {
+    --primary-color: #007bff; /* Яркий синий - технологичный и профессиональный */
+    --secondary-color: #2c3e50; /* Темно-сине-серый для заголовков */
+    --text-color: #34495e; /* Темно-серый для основного текста */
+    --light-gray: #ecf0f1; /* Очень светлый серый для фона или разделителей */
+    --background-color: #f8f9fa; /* Слегка серый фон страницы */
+    --white: #ffffff;
+    --link-hover-color: #0056b3; /* Более темный синий для hover */
+    --section-spacing: 2.5rem; /* Отступ между секциями */
+    --border-radius: 8px; /* Скругление углов */
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Тень для контейнера */
+}
+
+/* --- Базовые стили и сброс --- */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-}
-
-html {
-    font-size: 100%;
-}
-
-body {
-    -webkit-font-smoothing: antialiased;
-    color: #333332;
-    font-family: Lora, serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.4;
-    text-rendering: optimizeLegibility;
-}
-
-.skill-set li:hover {
-    background: #3498db;
-}
-
-h1 {
-    color: rgba(0, 0, 0, .75);
-}
-
-.wrapper {
-    height: 100%;
-}
-
-.left {
-    background-color: rgba(0, 0, 0, .025);
-    border-right: 1px solid rgba(0, 0, 0, .05);
-    float: right;
-    height: 100%;
-    margin-left: -1px;
-    min-width: 256px;
-    position: fixed;
-    width: 33.33%;
-
-}
-
-.right {
-    float: right;
-    height: 100%;
-    position: relative;
-    width: 66.66%;
-}
-
-
-.name-hero {
-    background: rgba(0, 0, 0, .001);
-    bottom: 0;
-    height: 290px;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 85%;
-}
-
-.me-img img{
-    background-image: url("https://github.com/Pomoguy/cv/blob/master/img/photo.jpg");
-    background-size: 100%;
-    background-position: center;
-    border-radius: 100%;
-    height: 400px;
-    margin: 0 auto;
-    position: relative;
-    width: 400px;
-}
-
-.name-hero h1 {
-    font-family: Open Sans, sans-serif;
-    font-size: 1.5em;
-    text-align: center;
-}
-
-.name-hero h1 em {
-    color: rgba(0, 0, 0, .3);
-    font-style: normal;
-    font-weight: 700;
-}
-
-.name-hero p {
-    color: rgba(0, 0, 0, .5);
-    font-size: .75em;
-    line-height: 1.5;
-    margin: 0 8px 0 0;
-    text-align: center;
-}
-
-.name-hero .name-text {
-    margin: 0 auto;
-    width: 85%;
-}
-
-.inner {
-    margin: 0 auto;
-    max-width: 975px;
-    padding: 3em;
-}
-
-.inner h1 {
-    font-size: 1.75em;
-}
-
-.inner p {
-    color: rgba(0, 0, 0, .3);
-}
-
-.inner p em {
-    color: rgba(0, 0, 0, .75);
-    font-style: normal;
-}
-
-.inner section {
-    margin: 100px auto;
-}
-
-ul {
-    list-style-type: none;
-    margin-top: -10px;
-    max-width: 570px;
+    margin: 0;
     padding: 0;
 }
 
-.skill-set li {
-    background: rgba(0, 0, 0, .75);
-    border-radius: 5px;
-    color: #FFF;
-    display: inline-block;
-    list-style: none;
-    margin: 15px 15px 0 0;
-    padding: 10px;
-    text-align: justify;
+html {
+    scroll-behavior: smooth; /* Плавная прокрутка (если есть внутренние ссылки) */
+    font-size: 16px; /* Базовый размер шрифта */
 }
 
-.architect-set li {
-    background: rgba(226, 10, 10, 0.75);
-    border-radius: 5px;
-    color: #FFF;
-    display: inline-block;
-    list-style: none;
-    margin: 15px 15px 0 0;
-    padding: 10px;
-    text-align: justify;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.65;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-@media screen and (max-width: 48em) {
-    .right, .left {
-        float: none;
-        position: relative !important;
-        width: 100%;
-        min-height: 500px;
+/* --- Контейнер / Обертка --- */
+.wrapper, /* Если используется класс .wrapper */
+main > div /* Или первый div внутри main (адаптируйте под свою структуру) */ {
+    max-width: 850px; /* Оптимальная ширина для чтения */
+    margin: 2rem auto; /* Центрирование и отступы сверху/снизу */
+    padding: 2rem 2.5rem; /* Внутренние отступы */
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* --- Типографика --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem; /* Имя */
+    text-align: center;
+    margin-bottom: 0.25em;
+    color: var(--primary-color); /* Акцент на имени */
+}
+
+h2 {
+    font-size: 1.75rem; /* Заголовки секций (Опыт, Навыки и т.д.) */
+    margin-top: var(--section-spacing);
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--light-gray); /* Деликатный разделитель */
+    position: relative; /* Для возможного псевдо-элемента */
+}
+/* Можно добавить акцентную линию под H2 */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px; /* Ширина акцентной линии */
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -2px; /* Расположить поверх border-bottom */
+    left: 0;
+}
+
+h3 {
+    font-size: 1.25rem; /* Подзаголовки (Должность, Название проекта) */
+    color: var(--primary-color); /* Акцент */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    padding-left: 25px; /* Отступ для маркеров */
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em; /* Отступ между пунктами списка */
+}
+
+li > ul, li > ol {
+    margin-top: 0.5em; /* Отступ для вложенных списков */
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+/* Разделитель <hr> */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--light-gray);
+    margin: var(--section-spacing) 0;
+}
+
+/* --- Специфичные элементы резюме --- */
+
+/* Фото профиля (добавьте класс .profile-photo к img) */
+.profile-photo {
+    display: block;
+    width: 150px; /* Размер фото */
+    height: 150px;
+    border-radius: 50%; /* Круглое фото */
+    object-fit: cover; /* Масштабирование с сохранением пропорций */
+    margin: 0 auto 1.5rem auto; /* Центрирование и отступ снизу */
+    border: 5px solid var(--white); /* Белая рамка */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Мягкая тень */
+    transition: transform 0.3s ease;
+}
+.profile-photo:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Секция контактов (можно обернуть в div или просто стилизовать список) */
+.contact-info ul {
+    list-style: none; /* Убрать маркеры */
+    padding-left: 0;
+    text-align: center; /* Центрировать контакты под именем/фото */
+    margin-bottom: var(--section-spacing);
+}
+.contact-info li {
+    display: inline-block; /* Расположить в строку */
+    margin: 0 1rem 0.5rem 1rem; /* Отступы между контактами */
+}
+.contact-info i { /* Если используете иконки (например, Font Awesome) */
+    margin-right: 0.5em;
+    color: var(--primary-color); /* Цвет иконки */
+}
+
+/* Секция навыков (можно стилизовать как теги) */
+.skills-list ul,
+.skills-list { /* Если просто список без ul */
+    list-style: none;
+    padding-left: 0;
+    display: flex; /* Расположить в строку */
+    flex-wrap: wrap; /* Перенос на новую строку */
+    gap: 0.75rem; /* Расстояние между тегами */
+}
+.skills-list li,
+.skill-tag { /* Если используете span/div с классом */
+    display: inline-block;
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: default; /* Или pointer, если они кликабельны */
+}
+.skills-list li:hover,
+.skill-tag:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Кнопка скачивания PDF (добавьте класс .download-btn к ссылке) */
+.download-btn {
+    display: inline-block; /* Кнопка в тексте */
+    /* Или display: block; text-align: center; margin: 1.5rem auto; для центрированной кнопки */
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px; /* Полностью скругленная кнопка */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Тень под цвет кнопки */
+}
+
+.download-btn:hover {
+    background-color: var(--link-hover-color);
+    color: var(--white);
+    text-decoration: none;
+    transform: translateY(-2px); /* Легкий подъем */
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* Слегка уменьшить базовый шрифт */
     }
 
-    .handmade {
-        text-align: center !important;
-        margin-top: 0px !important;
+    .wrapper, main > div {
+        margin: 1rem auto;
+        padding: 1.5rem;
+        border-radius: 0; /* Убрать скругление на мобильных */
+        box-shadow: none; /* Убрать тень на мобильных */
     }
 
-    @media screen and (max-width: 75em) {
-        body {
-            font-size: 16px;
-        }
+    h1 {
+        font-size: 2rem;
     }
 
-    @media screen and (max-width: 60em) {
-        body {
-            font-size: 14px;
-        }
-    }
-    .clearfix:after {
-        content: " "; /* Older browser do not support empty content */
-        visibility: hidden;
-        display: block;
-        height: 0;
-        clear: both;
+    h2 {
+        font-size: 1.5rem;
     }
 
-    .handmade {
-        text-align: right;
-        margin-top: 100px;
+    h3 {
+        font-size: 1.15rem;
     }
 
-    .handmade em {
-        font-family: 'Shadows Into Light', cursive;
-        font-size: 1.25em;
-        margin-left: 5px;
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-info li {
+        display: block; /* Контакты в столбик */
+        margin: 0 0 0.75rem 0;
+    }
+
+    .skills-list {
+        justify-content: center; /* Центрировать теги */
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    .wrapper, main > div {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+    h2::after {
+        width: 40px; /* Уменьшить акцентную линию */
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
     }
 }
