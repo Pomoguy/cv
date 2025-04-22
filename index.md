@@ -84,3 +84,12 @@ title: Резюме Иванова Ивана
 
 [Download Resume (PDF)](resume_en.pdf){: .download-btn }
 </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+ <div class="container-fluid">
+   <ul class="navbar-nav">
+     <li class="nav-item"><a class="nav-link" href="#" onclick="setLanguage('ru')">Русский</a></li>
+     <li class="nav-item"><a class="nav-link" href="#" onclick="setLanguage('en')">English</a></li>
+   </ul>
+ </div>
+</nav>

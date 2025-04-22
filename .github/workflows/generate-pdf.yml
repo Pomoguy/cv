@@ -24,11 +24,11 @@ jobs:
 
       - name: Convert Markdown to PDF (Русский)
         run: |
-          pandoc index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V lang=ru -o resume_ru.pdf
+          pandoc index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V geometry:margin=1in -V fontsize=12pt -V lang=ru -o resume_ru.pdf
 
       - name: Convert Markdown to PDF (English)
         run: |
-          pandoc index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V lang=en -o resume_en.pdf
+          pandoc index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V geometry:margin=1in -V fontsize=12pt -V lang=en -o resume_en.pdf
 
       - name: Commit and Push PDFs
         run: |
