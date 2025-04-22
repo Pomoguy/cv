@@ -5,7 +5,7 @@ lang: en
 ---
 
 # Ivan Ivanov
-Web Developer | Full-Stack Developer
+Web Developerr | Full-Stack Developer
 
 ---
 

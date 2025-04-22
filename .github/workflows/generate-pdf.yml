@@ -76,6 +76,6 @@ jobs:
           git commit -m "Automated: Update resume PDFs" \
             --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" \
             || echo "No changes to commit." # Игнорировать ошибку, если коммит пустой
-          git push origin main || echo "Push failed, maybe no changes." # Или ваша основная ветка
+          git push origin master || echo "Push failed, maybe no changes." # Или ваша основная ветка
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Токен для аутентификации при пуше
