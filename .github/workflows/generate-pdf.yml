@@ -3,7 +3,7 @@ name: Generate and Commit PDF Resumes
 on:
   push:
     branches:
-      - main # Или ваша основная ветка (e.g., master)
+      - master # Или ваша основная ветка (e.g., master)
     paths: # Запускать только при изменении MD файлов резюме
       - 'ru/index.md'
       - 'en/index.md'

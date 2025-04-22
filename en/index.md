@@ -1,67 +1,69 @@
 ---
 layout: default
-title: Ivanov Ivan Ivanovich's Resume
+title: Resume - Ivan Ivanov
 lang: en
 ---
-<div class="fade-in" style="display:none;">
-# Ivanov Ivan Ivanovich
 
-![Photo](../assets/images/photo.jpg){: .profile-photo }
+![Photo of Ivan Ivanov](../assets/images/photo.jpg){: .profile-photo}
 
-**Web Developer** with over 5 years of experience in developing web applications and services. Specializing in both frontend and backend development using modern technologies.
+# Ivan Ivanov
+Web Developer | Full-Stack Developer
 
 ---
 
 ## Contact Information
-
-- **Email:** [ivanov@example.com](mailto:ivanov@example.com)
-- **Phone:** +7 (123) 456-78-90
-- **GitHub:** [github.com/ivanov](https://github.com/ivanov)
-- **LinkedIn:** [linkedin.com/in/ivanov](https://linkedin.com/in/ivanov)
-
-## Skills
-
-- **Programming Languages:** Python, JavaScript, Ruby
-- **Frameworks:** React, Node.js, Django, Ruby on Rails
-- **Databases:** PostgreSQL, MongoDB, MySQL
-- **Tools:** Git, Docker, AWS, Jenkins
-
-## Work Experience
-
-### Lead Developer
-**XYZ Company**, January 2020 - Present
-
-- Developed and maintained web applications using React and Node.js.
-- Led a team of 5 developers, coordinating project workflows.
-- Optimized application performance and improved UX/UI.
-- Implemented CI/CD pipelines, reducing release times by 30%.
-
-### Developer
-**ABC Company**, June 2017 - December 2019
-
-- Created and implemented new features in existing applications.
-- Conducted code testing and debugging to ensure high product quality.
-- Collaborated with designers and project managers to achieve objectives.
-- Participated in migrating projects to cloud services, enhancing application scalability.
-
-## Education
-
-**Master of Computer Science**, Moscow State University, 2015 - 2020
-
-- Specialization: Artificial Intelligence and Machine Learning.
-- Coursework included: Natural Language Processing, Deep Learning.
-
-## Projects
-
-### "E-Commerce Platform" Project
-**Description:** Developed a full-featured e-commerce platform with a shopping cart, payment system, and admin dashboard.  
-**Technologies:** React, Node.js, MongoDB, AWS.
-
-### "Data Analysis" Project
-**Description:** Created a system for collecting and analyzing big data with result visualization.  
-**Technologies:** Python, Django, PostgreSQL, D3.js.
+*   **Email:** [ivan.ivanov@email.com](mailto:ivan.ivanov@email.com)
+*   **Phone:** +7 (9XX) XXX-XX-XX
+*   **Location:** Moscow, Russia
+*   **GitHub:** [github.com/yourusername](https://github.com/yourusername)
+*   **LinkedIn:** [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
 
 ---
 
-[Download Resume (PDF)](../resume_en.pdf){: .download-btn }
-</div>
+## About Me
+A motivated and experienced web developer with 5+ years of experience in building and maintaining web applications. Specializing in JavaScript (React, Node.js) and Python (Django). Seeking an opportunity to apply my skills within a dynamic team to develop innovative products.
+
+---
+
+## Key Skills
+*   **Frontend:** HTML5, CSS3 (Sass/Less), JavaScript (ES6+), TypeScript, React, Redux, Vue.js (basic)
+*   **Backend:** Node.js (Express), Python (Django, Flask), REST API, GraphQL
+*   **Databases:** PostgreSQL, MongoDB, MySQL, Redis
+*   **Tools & DevOps:** Git, Docker, Nginx, CI/CD (GitHub Actions, Jenkins), AWS (EC2, S3, RDS)
+*   **Testing:** Jest, Cypress, Pytest
+*   **Methodologies:** Agile, Scrum
+
+---
+
+## Work Experience
+
+### Senior Web Developer | TechnoSoft Company | Moscow | 2020 - Present
+*   Developed and maintained key modules of the company's CRM system using React and Node.js.
+*   Designed and implemented REST APIs for inter-service communication.
+*   Mentored junior developers and conducted code reviews.
+*   Optimized frontend and backend performance (achieved 25% faster load times).
+*   Implemented CI/CD pipelines using GitHub Actions.
+
+### Web Developer | WebStart Company | Moscow | 2018 - 2020
+*   Developed user interfaces for various web projects using HTML, CSS, JavaScript.
+*   Created backend logic using Python (Django) for internal company systems.
+*   Integrated third-party APIs (payment systems, delivery services).
+
+---
+
+## Education
+
+### Moscow State University (MSU) | Moscow
+*   **Master's Degree**, Applied Mathematics and Computer Science | 2016 - 2018
+### Moscow State University (MSU) | Moscow
+*   **Bachelor's Degree**, Applied Mathematics and Computer Science | 2012 - 2016
+
+---
+
+## Projects (Examples)
+*   **Personal Blog:** A blog platform built with Django and React ([GitHub Link](https://github.com/yourusername/blog-project))
+*   **Data Visualization Tool:** A web application for displaying data using D3.js ([GitHub Link](https://github.com/yourusername/data-viz-tool))
+
+---
+
+<a href="../resume_en.pdf" class="download-btn" download>Download Resume (PDF)</a>
