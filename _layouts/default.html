@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: "ru" }}">
+<html lang="{{ page.lang | default: 'ru' }}">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Подключение CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <!-- Подключение Font Awesome для иконок -->
+    <!-- Опционально: иконки Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Подключение Google Fonts -->
+    <!-- Опционально: шрифты Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Подключение JavaScript -->
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="/cv/ru/index.html">Русский</a></li>
-            <li><a href="/cv/en/index.html">English</a></li>
-        </ul>
+<header class="site-header">
+    <nav class="language-switcher">
+        <a href="/cv/ru/index.html" data-lang="ru">Русский</a> |
+        <a href="/cv/en/index.html" data-lang="en">English</a>
     </nav>
 </header>
-<div class="container">
-    {{ content }}
-</div>
+
+<main class="page-content" aria-label="Content">
+    <div class="wrapper">
+        <div id="resume-content" class="resume-container">
+            <!-- Анимированный контент будет здесь -->
+            {{ content }}
+        </div>
+    </div>
+</main>
+
 </body>
 </html>

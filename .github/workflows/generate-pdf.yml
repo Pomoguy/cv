@@ -1,23 +1,27 @@
-name: Generate PDF Resumes
+name: Generate and Commit PDF Resumes
 
 on:
   push:
-    branches: [ main, master ]
+    branches:
+      - main # Или ваша основная ветка (e.g., master)
+    paths: # Запускать только при изменении MD файлов резюме
+      - 'ru/index.md'
+      - 'en/index.md'
+  workflow_dispatch: # Позволяет запускать вручную из интерфейса GitHub Actions
 
 jobs:
-  build:
+  build-and-commit-pdf:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install Pandoc and LaTeX
+      - name: Install Pandoc and LaTeX Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex
+          sudo apt-get install -y pandoc texlive-xetex wget
 
-      - name: Download Eisvogel Template
+      - name: Download Eisvogel LaTeX Template
         run: |
           mkdir -p ~/.pandoc/templates
           wget -O ~/.pandoc/templates/eisvogel.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/eisvogel.latex
@@ -29,21 +33,49 @@ jobs:
           wget -O ~/.pandoc/templates/hypersetup.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/hypersetup.latex
           wget -O ~/.pandoc/templates/eisvogel-added.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/eisvogel-added.latex
           wget -O ~/.pandoc/templates/eisvogel-title-page.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/eisvogel-title-page.latex
+          echo "Eisvogel template downloaded."
 
-      - name: Convert Markdown to PDF (Русский)
+      - name: Generate Russian PDF Resume
         run: |
-          pandoc ru/index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V lang=ru -o resume_ru.pdf
+          pandoc ru/index.md \
+            -f markdown \
+            -t pdf \
+            --pdf-engine=xelatex \
+            --template=eisvogel.latex \
+            -V lang=ru \
+            -V mainfont="DejaVu Serif" \
+            -V sansfont="DejaVu Sans" \
+            -V monofont="DejaVu Sans Mono" \
+            -o resume_ru.pdf
+          echo "Russian PDF generated."
 
-      - name: Convert Markdown to PDF (English)
+      - name: Generate English PDF Resume
         run: |
-          pandoc en/index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V lang=en -o resume_en.pdf
+          pandoc en/index.md \
+            -f markdown \
+            -t pdf \
+            --pdf-engine=xelatex \
+            --template=eisvogel.latex \
+            -V lang=en \
+            -V mainfont="DejaVu Serif" \
+            -V sansfont="DejaVu Sans" \
+            -V monofont="DejaVu Sans Mono" \
+            -o resume_en.pdf
+          echo "English PDF generated."
 
-      - name: Commit and Push PDFs
+      - name: Commit and Push PDF files
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          # Проверяем, есть ли изменения в PDF файлах
+          if git diff --quiet --exit-code resume_ru.pdf resume_en.pdf; then
+            echo "No changes in PDF files to commit."
+            exit 0
+          fi
           git add resume_ru.pdf resume_en.pdf
-          git commit -m "Автоматическое обновление resume PDFs"
-          git push
+          git commit -m "Automated: Update resume PDFs" \
+            --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" \
+            || echo "No changes to commit." # Игнорировать ошибку, если коммит пустой
+          git push origin main || echo "Push failed, maybe no changes." # Или ваша основная ветка
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Токен для аутентификации при пуше
