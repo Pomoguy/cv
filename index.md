@@ -3,7 +3,7 @@ layout: default
 title: Резюме Иванова Ивана
 ---
 
-<div id="ru">
+<div id="ru" class="fade-in">
 # Иванов Иван Иванович
 
 ![Фотография](assets/images/photo.jpg){: .profile-photo }
@@ -44,7 +44,7 @@ title: Резюме Иванова Ивана
 [Скачать резюме (PDF)](resume_ru.pdf){: .download-btn }
 </div>
 
-<div id="en" style="display:none;">
+<div id="en" class="fade-out" style="display:none;">
 # Ivanov Ivan Ivanovich
 
 ![Photo](assets/images/photo.jpg){: .profile-photo }
