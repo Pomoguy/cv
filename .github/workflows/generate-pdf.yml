@@ -12,18 +12,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
 
-      - name: Convert Markdown to PDF
-        run: pandoc index.md --from markdown --template eisvogel --pdf-engine=xelatex -o resume.pdf
+      - name: Convert Markdown to PDF (Русский)
+        run: |
+          pandoc index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V lang=ru -o resume_ru.pdf
 
-      - name: Commit PDF
+      - name: Convert Markdown to PDF (English)
+        run: |
+          pandoc index.md -f markdown -t pdf --pdf-engine=xelatex --template=eisvogel.latex -V lang=en -o resume_en.pdf
+
+      - name: Commit and Push PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resume.pdf
-          git commit -m "Автоматическое обновление resume.pdf"
+          git add resume_ru.pdf resume_en.pdf
+          git commit -m "Автоматическое обновление resume PDFs"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
