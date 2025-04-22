@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ page.lang | default: "ru" }}">
 <head>
     <meta charset="UTF-8">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Подключение CSS -->
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <!-- Подключение Font Awesome для иконок (опционально) -->
+    <!-- Подключение Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Подключение Google Fonts (опционально) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Подключение Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Подключение JavaScript -->
     <script src="/assets/js/scripts.js" defer></script>
 </head>
 <body>
-<div class="container">
+<header>
     <nav>
         <ul>
-            <li><a href="/cv/ru/index.html">Русский</a></li>
-            <li><a href="/cv/en/index.html">English</a></li>
+            <li><a href="/ru/index.html">Русский</a></li>
+            <li><a href="/en/index.html">English</a></li>
         </ul>
     </nav>
-    <div id="content">
-        {{ content }}
-    </div>
+</header>
+<div class="container">
+    {{ content }}
 </div>
 </body>
 </html>

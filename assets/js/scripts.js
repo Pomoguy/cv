@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll('nav ul li a');
-    const content = document.getElementById('content');
+    const content = document.querySelector('.container');
 
     links.forEach(link => {
         link.addEventListener('click', function(event) {
@@ -24,14 +24,17 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Извлечение нужной части контента
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(data, 'text/html');
-                        const newContent = doc.querySelector('#content').innerHTML;
+                        const newContent = doc.querySelector('.container').innerHTML;
 
                         // Обновление контента
                         content.innerHTML = newContent;
 
-                        // Удаление класса fade-out и добавление fade-in
+                        // Добавление класса fade-in и удаление fade-out
                         content.classList.remove('fade-out');
                         content.classList.add('fade-in');
+
+                        // Прокрутка к началу
+                        window.scrollTo(0, 0);
                     })
                     .catch(error => {
                         console.error('Ошибка при загрузке контента:', error);
