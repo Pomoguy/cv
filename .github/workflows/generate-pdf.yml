@@ -26,6 +26,9 @@ jobs:
           wget -O ~/.pandoc/templates/font-settings.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/font-settings.latex
           wget -O ~/.pandoc/templates/common.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/common.latex
           wget -O ~/.pandoc/templates/after-header-includes.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/after-header-includes.latex
+          wget -O ~/.pandoc/templates/hypersetup.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/hypersetup.latex
+          wget -O ~/.pandoc/templates/eisvogel-added.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/eisvogel-added.latex
+          wget -O ~/.pandoc/templates/eisvogel-title-page.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/eisvogel-title-page.latex
 
       - name: Convert Markdown to PDF (Русский)
         run: |
