@@ -1,120 +1,195 @@
-/* Базовые стили */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    -webkit-font-smoothing: antialiased;
+    color: #333332;
+    font-family: Lora, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+}
+
+.skill-set li:hover {
+    background: #3498db;
+}
+
+h1 {
+    color: rgba(0, 0, 0, .75);
 }
 
 .wrapper {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 0 20px;
+    height: 100%;
 }
 
-.site-header {
-    background-color: #2c3e50;
-    padding: 10px 0;
-    text-align: right; /* Размещаем переключатель справа */
+.left {
+    background-color: rgba(0, 0, 0, .025);
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    float: right;
+    height: 100%;
+    margin-left: -1px;
+    min-width: 256px;
+    position: fixed;
+    width: 33.33%;
+
 }
 
-.language-switcher {
-    max-width: 800px; /* Выравниваем с основным контентом */
+.right {
+    float: right;
+    height: 100%;
+    position: relative;
+    width: 66.66%;
+}
+
+
+.name-hero {
+    background: rgba(0, 0, 0, .001);
+    bottom: 0;
+    height: 290px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85%;
+}
+
+.me-img img{
+    background-image: url("https://github.com/Pomoguy/cv/blob/master/img/photo.jpg");
+    background-size: 100%;
+    background-position: center;
+    border-radius: 100%;
+    height: 400px;
     margin: 0 auto;
-    padding: 0 20px;
+    position: relative;
+    width: 400px;
 }
 
-.language-switcher a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 5px;
-    transition: color 0.3s ease;
-}
-
-.language-switcher a:hover,
-.language-switcher a.active { /* Стиль для активного языка */
-    color: #3498db;
-}
-
-.resume-container {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Для анимации */
-    position: relative; /* Для позиционирования при анимации */
-}
-
-/* Стили для резюме */
-.profile-photo {
-    display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 25px auto;
-    object-fit: cover;
-    border: 4px solid #e0e0e0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-}
-
-h1, h2, h3 {
-    color: #2c3e50;
+.name-hero h1 {
+    font-family: Open Sans, sans-serif;
+    font-size: 1.5em;
     text-align: center;
-    margin-bottom: 0.5em;
 }
-h1 { font-size: 2.2em; }
-h2 { font-size: 1.6em; margin-top: 1.5em; border-bottom: 2px solid #3498db; padding-bottom: 0.3em; text-align: left;}
-h3 { font-size: 1.2em; color: #3498db; text-align: left; margin-top: 1em;}
+
+.name-hero h1 em {
+    color: rgba(0, 0, 0, .3);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.name-hero p {
+    color: rgba(0, 0, 0, .5);
+    font-size: .75em;
+    line-height: 1.5;
+    margin: 0 8px 0 0;
+    text-align: center;
+}
+
+.name-hero .name-text {
+    margin: 0 auto;
+    width: 85%;
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: 975px;
+    padding: 3em;
+}
+
+.inner h1 {
+    font-size: 1.75em;
+}
+
+.inner p {
+    color: rgba(0, 0, 0, .3);
+}
+
+.inner p em {
+    color: rgba(0, 0, 0, .75);
+    font-style: normal;
+}
+
+.inner section {
+    margin: 100px auto;
+}
 
 ul {
-    list-style: disc;
-    padding-left: 20px;
+    list-style-type: none;
+    margin-top: -10px;
+    max-width: 570px;
+    padding: 0;
 }
 
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-.download-btn {
-    display: inline-block; /* или block, если кнопка должна быть на всю ширину */
-    text-align: center;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background-color: #27ae60;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    cursor: pointer;
+.skill-set li {
+    background: rgba(0, 0, 0, .75);
+    border-radius: 5px;
+    color: #FFF;
+    display: inline-block;
+    list-style: none;
+    margin: 15px 15px 0 0;
+    padding: 10px;
+    text-align: justify;
 }
 
-.download-btn:hover {
-    background-color: #2ecc71;
-    text-decoration: none;
-    transform: translateY(-2px);
+.architect-set li {
+    background: rgba(226, 10, 10, 0.75);
+    border-radius: 5px;
+    color: #FFF;
+    display: inline-block;
+    list-style: none;
+    margin: 15px 15px 0 0;
+    padding: 10px;
+    text-align: justify;
 }
 
-/* Анимация переключения */
-.content-fade-out {
-    opacity: 0;
-    transform: translateY(20px); /* Небольшой сдвиг вниз при исчезании */
-}
+@media screen and (max-width: 48em) {
+    .right, .left {
+        float: none;
+        position: relative !important;
+        width: 100%;
+        min-height: 500px;
+    }
 
-.content-fade-in {
-    opacity: 1;
-    transform: translateY(0); /* Возвращение на место при появлении */
-}
+    .handmade {
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
 
-/* Дополнительно: активный язык */
-.language-switcher a.active {
-    text-decoration: underline;
-    font-weight: bold;
+    @media screen and (max-width: 75em) {
+        body {
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (max-width: 60em) {
+        body {
+            font-size: 14px;
+        }
+    }
+    .clearfix:after {
+        content: " "; /* Older browser do not support empty content */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .handmade {
+        text-align: right;
+        margin-top: 100px;
+    }
+
+    .handmade em {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 1.25em;
+        margin-left: 5px;
+    }
 }
