@@ -1,22 +1,23 @@
 ---
 layout: default
-title: Резюме Помогайбо Григория
+title: Резюме Иванова Ивана
 ---
 
-# Помогайбо Григорий Сергеевич
+<div id="ru">
+# Иванов Иван Иванович
 
 ![Фотография](assets/images/photo.jpg){: .profile-photo }
 
-**ИТ архитектор** с более чем 5-летним опытом создания современных веб-приложений.
+**Веб-разработчик** с более чем 5-летним опытом создания современных веб-приложений.
 
 ---
 
 ## Контактная информация
 
-- **Email:** [pomogaibo.g.s@gmail.com](mailto:pomogaibo.g.s@gmail.com)
-- **Телефон:** +7 (925) 302-30-06
-- **GitHub:** [github.com/Pomoguy](https://github.com/Pomoguy)
-- **LinkedIn:** [linkedin.com/in/grisha-pomogaybo-9b84a0217](https://linkedin.com/in/grisha-pomogaybo-9b84a0217)
+- **Email:** [ivanov@example.com](mailto:ivanov@example.com)
+- **Телефон:** +7 (123) 456-78-90
+- **GitHub:** [github.com/ivanov](https://github.com/ivanov)
+- **LinkedIn:** [linkedin.com/in/ivanov](https://linkedin.com/in/ivanov)
 
 ## Опыт работы
 
@@ -40,4 +41,46 @@ title: Резюме Помогайбо Григория
 
 ---
 
-[Скачать резюме (PDF)](resume.pdf){: .download-btn}
+[Скачать резюме (PDF)](resume_ru.pdf){: .download-btn }
+</div>
+
+<div id="en" style="display:none;">
+# Ivanov Ivan Ivanovich
+
+![Photo](assets/images/photo.jpg){: .profile-photo }
+
+**Web Developer** with over 5 years of experience in creating modern web applications.
+
+---
+
+## Contact Information
+
+- **Email:** [ivanov@example.com](mailto:ivanov@example.com)
+- **Phone:** +7 (123) 456-78-90
+- **GitHub:** [github.com/ivanov](https://github.com/ivanov)
+- **LinkedIn:** [linkedin.com/in/ivanov](https://linkedin.com/in/ivanov)
+
+## Work Experience
+
+### Lead Developer
+**XYZ Company**, January 2020 - Present
+
+- Development and maintenance of web applications using React and Node.js.
+- Leading a team of 5 developers.
+- Optimizing application performance and improving UX/UI.
+
+### Developer
+**ABC Company**, June 2017 - December 2019
+
+- Creating and implementing new features in existing applications.
+- Testing and debugging code to ensure high product quality.
+- Collaborating with designers and project managers to achieve goals.
+
+## Education
+
+**Master of Computer Science**, Moscow State University, 2015 - 2020
+
+---
+
+[Download Resume (PDF)](resume_en.pdf){: .download-btn }
+</div>
