@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Удаление класса fade-out и добавление fade-in
                         content.classList.remove('fade-out');
                         content.classList.add('fade-in');
-
-                        // Перезапуск скриптов, если необходимо
-                        // Например, если есть дополнительные скрипты в новом контенте
                     })
                     .catch(error => {
                         console.error('Ошибка при загрузке контента:', error);

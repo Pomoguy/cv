@@ -24,6 +24,7 @@ jobs:
           wget -O ~/.pandoc/templates/passoptions.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/passoptions.latex
           wget -O ~/.pandoc/templates/fonts.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/fonts.latex
           wget -O ~/.pandoc/templates/font-settings.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/font-settings.latex
+          wget -O ~/.pandoc/templates/common.latex https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/refs/heads/master/template-multi-file/common.latex
 
       - name: Convert Markdown to PDF (Русский)
         run: |
