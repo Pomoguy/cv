@@ -4,8 +4,6 @@ title: Resume - Ivan Ivanov
 lang: en
 ---
 
-![Photo of Ivan Ivanov](../assets/images/photo.jpg){: .profile-photo}
-
 # Ivan Ivanov
 Web Developer | Full-Stack Developer
 
