@@ -40,12 +40,8 @@ jobs:
           pandoc ru/index.md \
             -f markdown \
             -t pdf \
-            --pdf-engine=xelatex \
-            --template=eisvogel.latex \
-            -V lang=ru \
-            -V mainfont="DejaVu Serif" \
-            -V sansfont="DejaVu Sans" \
-            -V monofont="DejaVu Sans Mono" \
+            --pdf-engine=weasyprint \
+            --css=ru/index.css \
             -o resume_ru.pdf
           echo "Russian PDF generated."
 
