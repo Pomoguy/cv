@@ -28,7 +28,7 @@ jobs:
             -f markdown \
             -t pdf \
             --pdf-engine=weasyprint \
-            --css=assets/css/styles.css \
+            --css=assets/css/cv.css \
             -o resume_ru.pdf
           echo "Russian PDF generated."
 
@@ -38,7 +38,7 @@ jobs:
             -f markdown \
             -t pdf \
             --pdf-engine=weasyprint \
-            --css=assets/css/styles.css \
+            --css=assets/css/cv.css \
             -o resume_en.pdf
           echo "English PDF generated."
 
