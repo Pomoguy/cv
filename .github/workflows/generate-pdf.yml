@@ -3,10 +3,10 @@ name: Generate and Commit PDF Resumes
 on:
   push:
     branches:
-      - main # Или ваша основная ветка (e.g., master)
+      - master # Или ваша основная ветка (e.g., master)
     paths: # Запускать только при изменении MD файлов резюме
-      - 'ru/index.md'
-      - 'en/index.md'
+      - 'ru.md'
+      - 'en.md'
   workflow_dispatch: # Позволяет запускать вручную из интерфейса GitHub Actions
 
 jobs:
@@ -39,7 +39,7 @@ jobs:
             -t pdf \
             --pdf-engine=weasyprint \
             --css=ru/index.css \
-            -o resume_ru.pdf
+            -o resume_en.pdf
           echo "English PDF generated."
 
       - name: Commit and Push PDF files
