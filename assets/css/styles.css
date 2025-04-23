@@ -26,3 +26,63 @@ body {
     font-size: 1rem;
     cursor: pointer;
 }
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul, ol {
+    padding-left: 1em;
+}
+
+li {
+    margin-top: 0.25em;
+}
+
+p, li {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+/* Имя */
+
+#markdown-content h1 {
+    color: #333;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+}
+
+
+#markdown-content h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+#markdown-content h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#markdown-content h4 {
+    color: #555;
+    font-size: 1.0rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+#markdown-content h5 {
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}

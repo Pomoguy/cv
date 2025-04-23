@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Grigory Pomogaybo
 TBD
 
