@@ -1,6 +1,6 @@
 // Функция для загрузки Markdown файла в зависимости от выбранного языка
 function loadMarkdown(lang) {
-    fetch(`./${lang}/index.md`)
+    fetch(`${lang}.md`)
         .then(res => {
             if (!res.ok) throw new Error("Файл не найден");
             return res.text();
