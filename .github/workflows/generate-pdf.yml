@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master # Или ваша основная ветка (e.g., master)
+    paths: # Запускать только при изменении MD файлов резюме
+      - 'ru/index.md'
+      - 'en/index.md'
   workflow_dispatch: # Позволяет запускать вручную из интерфейса GitHub Actions
 
 jobs:
