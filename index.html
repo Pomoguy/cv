@@ -1,85 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Помогайбо Григорий</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 0;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .lang-switcher {
-            text-align: right;
-            margin-bottom: 1rem;
-        }
-
-        .lang-switcher button {
-            margin-left: 5px;
-            padding: 0.4rem 0.8rem;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Многоязычная страница</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="lang-switcher">
-            <button onclick="switchLang('ru')">Русский</button>
-            <button onclick="switchLang('en')">English</button>
-        </div>
-    </nav>
-</header>
+<div class="container">
+    <div class="lang-switcher">
+        <button onclick="switchLang('ru')">Русский</button>
+        <button onclick="switchLang('en')">English</button>
+    </div>
 
-<div class="d-flex justify-content-start align-items-center mb-5">
-    <img src="../assets/images/photo.jpg"  alt="Пример фото" class="rounded-circle img-fluid profile-photo">
+    <h1>Контент</h1>
+    <div id="markdown-content">Загрузка...</div>
 </div>
 
-<div id="markdown-content">Загрузка контента...</div>
-
-
-
-
+<!-- Подключаем внешний JavaScript файл -->
+<script src="script.js"></script>
+<!-- Подключаем библиотеку для парсинга Markdown -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-    function loadMarkdown(lang) {
-        fetch(`${lang}/index.md`)
-            .then(res => {
-                if (!res.ok) throw new Error("Файл не найден");
-                return res.text();
-            })
-            .then(md => {
-                document.getElementById("markdown-content").innerHTML = marked.parse(md);
-            })
-            .catch(() => {
-                document.getElementById("markdown-content").innerText = "Ошибка загрузки контента.";
-            });
-    }
-    function switchLang(lang) {
-        loadMarkdown(lang);
-        document.documentElement.lang = lang;
-    }
-    // Загрузка по умолчанию
-    window.addEventListener("DOMContentLoaded", () => {
-        const defaultLang = navigator.language.startsWith("ru") ? "ru" : "en";
-        switchLang(defaultLang);
-    });
-</script>
-
 </body>
 </html>
