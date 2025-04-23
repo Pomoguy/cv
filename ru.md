@@ -149,5 +149,3 @@
 * **Английский:** upper-intermediate
 
 ---
-
-<a href="../resume_ru.pdf" class="download-btn" download>Скачать резюме (PDF)</a>
