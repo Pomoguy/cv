@@ -19,9 +19,9 @@ function switchLang(lang) {
     document.documentElement.lang = lang;  // Меняем атрибут lang в теге <html>
     const downloadContainer = document.getElementById('download-btn-container');
     if (lang === 'ru') {
-        downloadContainer.innerHTML = '<a id="download-btn ps-2" class="btn btn-outline-primary" href="./resume_ru.pdf" download>📥 Скачать CV (PDF)</a>';
+        downloadContainer.innerHTML = '<a id="download-btn ps-2" class="btn btn-outline-primary" href="./resume_ru.pdf" type="application/pdf" download>📥 Скачать CV (PDF)</a>';
     } else {
-        downloadContainer.innerHTML = '<a id="download-btn ps-2" class="btn btn-outline-primary" href="./resume_en.pdf" download>📥 Download CV (PDF)</a>';
+        downloadContainer.innerHTML = '<a id="download-btn ps-2" class="btn btn-outline-primary" href="./resume_en.pdf" type="application/pdf" download>📥 Download CV (PDF)</a>';
     }
 }
 
