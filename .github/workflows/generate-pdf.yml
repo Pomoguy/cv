@@ -1,0 +1,60 @@
+name: Generate and Commit PDF Resumes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ru.md'
+      - 'en.md'
+  workflow_dispatch:
+
+jobs:
+  build-and-commit-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Pandoc and weasyprint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex wget
+          sudo apt install pandoc weasyprint
+
+      - name: Generate Russian PDF Resume
+        run: |
+          pandoc ru.md \
+            -f markdown \
+            -t pdf \
+            --pdf-engine=weasyprint \
+            --css=assets/css/cv.css \
+            -o resume_ru.pdf
+          echo "Russian PDF generated."
+
+      - name: Generate English PDF Resume
+        run: |
+          pandoc en.md \
+            -f markdown \
+            -t pdf \
+            --pdf-engine=weasyprint \
+            --css=assets/css/cv.css \
+            -o resume_en.pdf
+          echo "English PDF generated."
+
+      - name: Commit and Push PDF files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          # Проверяем, есть ли изменения в PDF файлах
+          if git diff --quiet --exit-code resume_ru.pdf resume_en.pdf; then
+            echo "No changes in PDF files to commit."
+            exit 0
+          fi
+          git add resume_ru.pdf resume_en.pdf
+          git commit -m "Automated: Update resume PDFs" \
+            --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" \
+            || echo "No changes to commit." # Игнорировать ошибку, если коммит пустой
+          git push origin main || echo "Push failed, maybe no changes." # Или ваша основная ветка
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Токен для аутентификации при пуше

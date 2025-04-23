@@ -1,0 +1,86 @@
+body {
+    font-family:'Inter',sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul, ol {
+    padding-left: 1em;
+}
+
+li {
+    margin-top: 0.25em;
+}
+
+p, li {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+/* Имя */
+
+#markdown-content h1 {
+    color: #333;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-family:'Inter',sans-serif;
+    font-size: 4rem;
+}
+
+
+#markdown-content h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-family:'Inter',sans-serif;
+}
+#markdown-content h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+#markdown-content h4 {
+    color: #555;
+    font-size: 1.0rem;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+}
+
+#markdown-content h5 {
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
