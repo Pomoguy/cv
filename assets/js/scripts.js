@@ -17,6 +17,12 @@ function loadMarkdown(lang) {
 function switchLang(lang) {
     loadMarkdown(lang);
     document.documentElement.lang = lang;  // Меняем атрибут lang в теге <html>
+    const downloadContainer = document.getElementById('download-btn-container');
+    if (lang === 'ru') {
+        downloadContainer.innerHTML = '<a id="download-btn ps-2" class="btn btn-outline-primary" href="../resume_ru.pdf" download>📥 Скачать CV (PDF)</a>';
+    } else {
+        downloadContainer.innerHTML = '<a id="download-btn ps-2" class="btn btn-outline-primary" href="../resume_en.pdf" download>📥 Download CV (PDF)</a>';
+    }
 }
 
 // Автозагрузка контента при загрузке страницы в зависимости от URL
