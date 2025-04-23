@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate Russian PDF Resume
         run: |
-          pandoc ru/index.md \
+          pandoc ru.md \
             -f markdown \
             -t pdf \
             --pdf-engine=weasyprint \
@@ -34,16 +34,12 @@ jobs:
 
       - name: Generate English PDF Resume
         run: |
-          pandoc en/index.md \
+          pandoc en.md \
             -f markdown \
             -t pdf \
-            --pdf-engine=xelatex \
-            --template=eisvogel.latex \
-            -V lang=en \
-            -V mainfont="DejaVu Serif" \
-            -V sansfont="DejaVu Sans" \
-            -V monofont="DejaVu Sans Mono" \
-            -o resume_en.pdf
+            --pdf-engine=weasyprint \
+            --css=ru/index.css \
+            -o resume_ru.pdf
           echo "English PDF generated."
 
       - name: Commit and Push PDF files
