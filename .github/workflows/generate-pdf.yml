@@ -20,6 +20,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex wget
+          sudo apt install pandoc weasyprint
 
       - name: Download Eisvogel LaTeX Template
         run: |
