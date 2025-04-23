@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>👨‍💻Помогайбо Григорий</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Помогайбо Григорий</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .lang-switcher {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .lang-switcher button {
+            margin-left: 5px;
+            padding: 0.4rem 0.8rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        </style>
 </head>
 
 <body>
@@ -24,6 +52,9 @@
 
 <div id="markdown-content">Загрузка контента...</div>
 
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     function loadMarkdown(lang) {
@@ -39,12 +70,10 @@
             document.getElementById("markdown-content").innerText = "Ошибка загрузки контента.";
         });
 }
-
 function switchLang(lang) {
     loadMarkdown(lang);
     document.documentElement.lang = lang;
 }
-
 // Загрузка по умолчанию
 window.addEventListener("DOMContentLoaded", () => {
     const defaultLang = navigator.language.startsWith("ru") ? "ru" : "en";

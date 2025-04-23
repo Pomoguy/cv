@@ -1,6 +1,5 @@
 ---
 layout: default
-lang: en
 ---
 
 # Grigory Pomogaybo

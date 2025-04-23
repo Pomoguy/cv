@@ -1,6 +1,5 @@
 ---
 layout: default
-lang: ru
 ---
 
 # Помогайбо Григорий
